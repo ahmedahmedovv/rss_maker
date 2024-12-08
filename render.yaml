@@ -1,9 +1,26 @@
 services:
   - type: web
-    name: rss-feed-service
+    name: news-scraper
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
+    plan: free
+    autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9
+        value: 3.9.0
+      - key: PYTHONUNBUFFERED
+        value: true
+
+  - type: cron
+    name: scraper-job
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    schedule: "0 */6 * * *"  # Runs every 6 hours
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: PYTHONUNBUFFERED
+        value: true
