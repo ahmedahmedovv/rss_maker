@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import os
 
 app = Flask(__name__)
@@ -19,6 +19,10 @@ def index():
                 })
     
     return render_template('index.html', feeds=rss_files)
+
+@app.route('/rss/<path:filename>')
+def serve_rss(filename):
+    return send_from_directory('rss', filename, mimetype='application/rss+xml')
 
 if __name__ == '__main__':
     app.run(debug=True) 
