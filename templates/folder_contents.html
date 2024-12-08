@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder Contents</title>
+    <link href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-lg px-3 py-6">
+        <div class="Box mb-4">
+            <div class="Box-header">
+                <h2 class="Box-title">RSS Folder Contents</h2>
+            </div>
+            {% if rss_files %}
+                <ul class="list-style-none">
+                    {% for file in rss_files %}
+                    <li class="Box-row">
+                        <a href="/rss/{{ file }}" class="Link--primary">{{ file }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="Box-row text-center text-gray">
+                    <p>No RSS files available</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="Box">
+            <div class="Box-header">
+                <h2 class="Box-title">Headlines Folder Contents</h2>
+            </div>
+            {% if headlines_files %}
+                <ul class="list-style-none">
+                    {% for file in headlines_files %}
+                    <li class="Box-row">
+                        <a href="/headlines/{{ file }}" class="Link--primary">{{ file }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="Box-row text-center text-gray">
+                    <p>No Headlines files available</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html> 
