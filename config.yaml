@@ -1,7 +1,7 @@
 sites:
 
 
-  - id: trt
+  - id: trt2
     url: https://www.trthaber.com/son-dakika-haberleri
     selector: .last-news-container .title a 
 
