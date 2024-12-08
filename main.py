@@ -10,7 +10,7 @@ def ensure_output_dir(directory):
 def main():
     output_dir = "headlines"
     rss_dir = "rss"
-    base_url = "https://rss-maker.onrender.com"  # Update this
+    base_url = "https://rss-maker.onrender.com"
     
     ensure_output_dir(output_dir)
     ensure_output_dir(rss_dir)
@@ -23,8 +23,14 @@ def main():
         print(f"Running {scraper.site_id} scraper...")
         scraper.get_headlines()
     
-    # Generate RSS feeds
-    rss_generator = RSSGenerator(output_dir, rss_dir, base_url)
+    # Generate RSS feeds with limits
+    rss_generator = RSSGenerator(
+        json_dir=output_dir,
+        rss_dir=rss_dir,
+        base_url=base_url,
+        max_entries=50,  # Keep last 50 entries
+        max_age_days=30  # Keep entries for 30 days
+    )
     rss_generator.generate_all_feeds()
 
 if __name__ == "__main__":
