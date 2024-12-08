@@ -10,7 +10,7 @@ def ensure_output_dir(directory):
 def main():
     output_dir = "headlines"
     rss_dir = "rss"
-    base_url = "https://ahmedahmedovv.github.io/rss_create/"  # Update this
+    base_url = "https://rss-maker.onrender.com"  # Update this
     
     ensure_output_dir(output_dir)
     ensure_output_dir(rss_dir)
