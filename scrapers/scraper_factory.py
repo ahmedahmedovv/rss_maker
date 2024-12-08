@@ -53,7 +53,6 @@ class DynamicScraper(NewsScraper):
             headlines_with_links = [(h, l) for h, l in zip(headlines, links) if h.strip()]
             
             title = self.site_id.capitalize()
-            self.save_to_markdown(title, headlines_with_links)
             self.save_to_json(title, headlines_with_links)
             
             return headlines_with_links

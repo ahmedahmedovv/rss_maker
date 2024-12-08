@@ -11,16 +11,6 @@ class NewsScraper(ABC):
     def get_headlines(self):
         pass
         
-    def save_to_markdown(self, title, headlines_with_links):
-        filename = os.path.join(self.output_dir, f"{title}.md")
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write(f"# {title}\n\n")
-            for headline, link in headlines_with_links:
-                if link:
-                    f.write(f"- [{headline}]({link})\n")
-                else:
-                    f.write(f"- {headline}\n") 
-
     def save_to_json(self, title, headlines_with_links):
         filename = os.path.join(self.output_dir, f"{title}.json")
         data = {
