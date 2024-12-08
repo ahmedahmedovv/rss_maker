@@ -1,0 +1,41 @@
+sites:
+
+
+  - id: trt
+    url: https://www.trthaber.com/son-dakika-haberleri
+    selector: .last-news-container .title a 
+
+  - id: webb
+    url: https://www.webtekno.com/haber
+    selector: .content-timeline__detail__container > a
+
+  - id: rp
+    url: https://www.rp.pl/wydarzenia/kraj
+    selector: .pt-6 a.md\:line-clamp-2
+
+  - id: sabah
+    url: https://www.sabah.com.tr/son-dakika-haberleri
+    selector: .heading
+
+  - id: polskie
+    url: https://www.polskieradio.pl/395/7785
+    selector: .title.title--big
+
+  - id: defenceministry
+    url: https://www.gov.pl/web/national-defence/news
+    selector: .title
+
+  - id: aaa
+    url: https://www.wirtualnemedia.pl/artykul/piotr-kaczkowski-trojka-wraca-nowa-audycja-sobotnia-tonacja-trojka
+    selector: .most-popular > a.most-popular-item
+
+  - id: bbb
+    url: https://www.wirtualnemedia.pl/artykul/piotr-kaczkowski-trojka-wraca-nowa-audycja-sobotnia-tonacja-trojka
+    selector: .most-popular-item
+
+
+
+
+
+
+
