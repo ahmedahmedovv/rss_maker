@@ -17,7 +17,7 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python main.py
-    schedule: "0 */6 * * *"  # Runs every 6 hours
+    schedule: "0 */1 * * *"  # Runs every 6 hours
     plan: free
     envVars:
       - key: PYTHON_VERSION

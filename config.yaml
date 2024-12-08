@@ -5,7 +5,7 @@ sites:
     url: https://www.trthaber.com/son-dakika-haberleri
     selector: .last-news-container .title a 
 
-  - id: webb
+  - id: webtekno
     url: https://www.webtekno.com/haber
     selector: .content-timeline__detail__container > a
 
