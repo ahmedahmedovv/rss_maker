@@ -33,3 +33,10 @@ ENV/
 
 # Project specific
 *.log 
+
+# Flask
+instance/
+.webassets-cache
+
+# Logs
+gunicorn.log

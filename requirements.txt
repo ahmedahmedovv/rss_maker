@@ -12,3 +12,7 @@ pyyaml>=5.4.1
 
 # Date handling
 python-dateutil>=2.8.2
+
+# Web interface
+flask>=2.0.1
+gunicorn>=20.1.0
